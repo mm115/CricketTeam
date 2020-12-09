@@ -1,0 +1,49 @@
+﻿@page
+@model CricketTeam.Pages.Rank.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ranking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ranking.Player_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ranking.Player_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ranking.Test)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ranking.Test)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ranking.ODI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ranking.ODI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ranking.T20)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ranking.T20)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ranking.Player_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ranking.Player_ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Ranking.Ranking_Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

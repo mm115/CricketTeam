@@ -1,0 +1,60 @@
+﻿@page
+@model CricketTeam.Pages.Fixture.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fixtures</h1>
+
+<p>
+    <a asp-page="Create">Add New Fixture Here</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fixtures[0].vs_Team)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fixtures[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fixtures[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fixtures[0].Ground_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fixtures[0].Player_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Fixtures) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vs_Team)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ground_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player_ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Fixture_Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Fixture_Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Fixture_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

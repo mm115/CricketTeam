@@ -1,0 +1,58 @@
+﻿@page
+@model CricketTeam.Pages.Event.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Events</h1>
+
+<p>
+    <a asp-page="Create">Add New Event Here</a>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].ICC_WTC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].IPL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].T20_WC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Fixture_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Events)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ICC_WTC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T20_WC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fixture_ID)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Event_Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Event_Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Event_Id">Delete</a>
+
+                </td>
+            </tr>
+           
+        }
+    </tbody>
+</table>
