@@ -110,7 +110,7 @@ namespace CricketTeam.Migrations
                 name: "IX_Ranking_Player_objPlayer_Id",
                 table: "Ranking",
                 column: "Player_objPlayer_Id");
-            var sqlFile = Path.Combine(".\\DatabaseScript", @"data.sql");
+            var sqlFile = Path.Combine(".\\DatabaseScript", @"Query.sql");
             migrationBuilder.Sql(File.ReadAllText(sqlFile));
 
         }
